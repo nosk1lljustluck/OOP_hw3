@@ -17,7 +17,7 @@ public:
         : WaterVehicle(brand, year, vesselType), length(length) {}
 
     string getInfo() override{
-        return "Boat class:: Length: " + std::to_string((int)length) + " meters\n" +
+        return "Boat class:: Length: " + toString(length) + " meters\n" +
                    "Vehicle class:: Brand: " + brand + "\n" +
                    "Vehicle class:: Year: " + std::to_string(year);
     }
