@@ -7,6 +7,9 @@
 #include <iostream>
 #include <string>
 
+std::string toString(double value) {
+    return std::to_string(value).substr(0, std::to_string(value).find_last_not_of('0') + 1);
+}
 class Truck : public LandVehicle {
 private:
     double loadCapacity;
@@ -16,7 +19,7 @@ public:
         : LandVehicle(brand, year, numWheels), loadCapacity(loadCapacity) {}
 
     string getInfo() override {
-        return "Truck class:: Load capacity: " + std::to_string((int)loadCapacity) + " meters\n" +
+        return "Truck class:: Load capacity: " + toString(loadCapacity) + " meters\n" +
                    "Vehicle class:: Brand: " + brand + "\n" +
                    "Vehicle class:: Year: " + std::to_string(year);
     }
